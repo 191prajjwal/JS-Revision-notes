@@ -1,8 +1,8 @@
 //based on how data is stored and accessed there are two types of data types
 
 //Primitive data types
-//when we acess variabble having primitive data type we acess its value and not reference
-//when we update a variable having primitive data type a new copy of it is genrated and the variable now equals to this copied value and original value is intact and now uncontrolled and memory leak happens which is handled by garbage collector
+//referring to primitive data types means referring the value
+//when we copy variable having primitive data type in any other variable then this new variable can acsess only the value of original variable but not reference 
 
 let num1=1
 let num2=2.5
@@ -26,8 +26,8 @@ console.table([typeof(num1),typeof(num2),typeof(num3),typeof(num4),typeof(str),t
 
 
 //Non primitive data types
-//refering to non primitive data type means referring the location where they are stored
-//so on updating non primitive data types we go to location and update the value at original place itself
+//refering to non primitive data type means referring the data by going to location where they are stored
+//so on storing and updating non primitive data types in other non primitive data type variable we go to location and update the value at original place itself
 
 //************Array************/
 let arr=[1,2,3]
@@ -44,11 +44,16 @@ let obj1={
     fname:"yes",
     lname:"no",
     age:24,
-    skills:["HTML","CSS","JS","React","NODEJS","EXpress"]
+    skills:["HTML","CSS","JS","React","NODEJS","EXpress"],
+    len: function(){
+        obj1=Object.keys(obj1)
+        console.log(obj1.length);
+            }
 }
 
 console.log(obj1)
 console.log(obj1.skills[2])
+obj1.len()
 
 //*********Function***************/
 function fun1(a){
@@ -74,7 +79,7 @@ fun3("fun3")
 fun4(4,3)
 
 
-console.log(typeof arr);//type of array is object(isnt irt surprising)
+console.log(typeof arr);//type of array is object(isnt it is surprising)
 console.log(typeof obj1);//type of object is object
 console.log(typeof fun1);//type of function is function
 

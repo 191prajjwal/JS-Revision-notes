@@ -4,12 +4,12 @@
 // When we store primitive data types they are stored in Stack. 
 // on assigning one primitive data type variable(a) to another primitive data type variable(b) we assign copy or we can say value of the b to a and not reference hence now if we change b, a do not get changed this can be understood with given example below
 
-let a="str1"
-let b="str2"
+let a=10
+let b=20
 console.log(a,b)
 b=a
 console.log(a,b)
-b="str3"
+b=30
 console.log(a,b)
 
 //so on assigning a to b and changing b afterwads do not update a because b has value of a not the reference of a
