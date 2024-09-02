@@ -9,11 +9,8 @@ console.log(mydate.toLocaleString());//gives date and time in local format(where
 // if we do same thing in our local machine or in console we get our indian format as machine is configured already for it
 
 console.log(mydate.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }))// now everything is in our format
-
-console.log(mydate.getFullYear());//gives year
-
+console.log(mydate.getFullYear());//gives yea
 console.log(mydate.getDate());
-console.log(mydate.getFullYear());
 console.log(mydate.getTimezoneOffset());
 console.log(mydate.toLocaleDateString());
 
