@@ -78,9 +78,20 @@ console.log("\n","key&value : ",keyValueArr[0]);
 console.log("\n","hasProperty : ",object1.hasOwnProperty("name"));//return true if our object has given keyname
 console.log("\n","hasProperty : ",object1.hasOwnProperty("id"));//return false if our object do not contain given keyname
 
+// Object destructuring
+
+let customer={customerId:"123we",customerPhone:"+9112223387",CustomerAadharcard:"1234 5678 1234"}
+console.log("\n","CustomerAadhar: ",customer.CustomerAadharcard);//if we use like this it will not look good
+
+// let {CustomerAadharcard}=customer
+// console.log('\n',"aadhar",CustomerAadharcard);
 
 
+let {CustomerAadharcard:aadhar}=customer
+console.log('\n',"aadhar",aadhar);
 
+//simply use a curly brace and destructure the properties of an object also you can rename the properties while destructuring
+// let {actualpropertyname:yourgivenname,.............,......}=object
 
 
 
