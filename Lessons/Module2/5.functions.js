@@ -47,3 +47,47 @@ if(arr)
 }
 
 myFun(object1,arr1)
+
+
+//functions in js
+
+//1.Normal function declaration
+
+function add(a,b){
+  return (a+b)
+}
+console.log(add(2,5));//prints 7
+
+//2.function expression
+
+const fun=function(a,b){
+     return (a+b)
+}
+
+console.log(fun(2,5));//prints 7
+
+//3.Arrow function
+
+const fun1=(a,b)=>{
+    return (a+b)
+}
+console.log(fun1(2,5));//prints 7
+
+//if arrow function has only one statement and which is also return then we can write it as 
+const fun2=(a,b)=>a+b
+console.log(fun1(2,5));//prints 7 this is called arrow function with implicit return
+
+//or same thing we can write as
+
+const fun3=(a,b)=>(a+b)
+console.log(fun3(2,5));//prints 7
+
+//Returning objects from arrow function
+
+const fun4=()=>{name:"prajjwal"}
+console.log(fun4())//returns undefined because this is not the correct way since {} after => will be treated as block for function
+
+//correct way
+
+const fun5=()=>({name:"prajjwal"})
+console.log(fun5());
