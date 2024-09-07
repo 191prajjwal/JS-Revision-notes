@@ -1,6 +1,7 @@
 //learn about singletons by your own
 //singleton is easy concept where we will add some conditions in our object creation such that if the object constructor is called for first time then only create object and all the other times return the exsisting object.
 //singleton object is made such that we have only one instance of an object that can be accessed all over the program ex: we can make Database a singleton object.
+//objects are in form of key value and key is always unique so you cant have two or more keys with same name if you do the last key will overwrite previous one
 
 let a="xyz"
 let mySymbol=Symbol("hi")
