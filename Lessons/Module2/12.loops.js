@@ -148,3 +148,9 @@ set.add(5);
 set.forEach((value1,value2,set) => console.log(value1,value2,set));
 
 //forEach takes callback function as an argument hence forEach is higher order looping function
+
+const values =arr3.forEach((item)=>{
+    return item
+})
+
+console.log(values)//it will return undefined because for loop always return undefined . that means we can say it do not return anything
