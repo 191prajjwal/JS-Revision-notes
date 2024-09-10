@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+
+    <div id="container" class="header">
+        <h1 class="heading">DOM Learning</h1>
+        <p id="para">Lorem ipsum dolor sit amet consectetur <span style="display:none">hello there </span>adipisicing elit. Sunt, doloremque?</p>
+        <h2 id="greet", class="head2">Hello there i am first h2</h2>
+        <h2 id="good", class="head2">Hello there good h2</h2>
+        <h2 id="Bye", class="head2">Hello there i am going h2</h2>
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+        <input type="email" placeholder ="Email"/>
+    </div>
+
+    <div id="newdiv">
+        <!-- hello comment-->
+      
+         abcd
+    </div>
+    
+</body>
+</html>
+
+
+<!-- //when we go to console and we do document that means it is refering to this html web page
+
+//getting element by id  =>  let a=   document.getElementBYId("container")
+so a has whole div with id container in it -->
+
+<!-- a.id = container -->
+ <!-- so now using this we can access any property of div -->
+<!-- a.class will give null as class is internally named as className in DOM -->
+ <!-- a.className='header' -->
+
+
+ <!-- a.getAttribute("id") will give value of id of a 
+ a.getAttribute("class") will give value of class of a  -->
+
+
+
+<!-- we can set attribute too 
+
+a.setAttribute("id","main")
+so now a will have id main and its is overwritten on previous id
+
+a.setAttribute("class",'new')
+now a is overwritten with class new , but if we want it to include previous class also which was "header"
+
+a.setAttribute("class","new header")
+now both will be there.
+ 
+-->
+
+
+
+<!-- We can add styling in the elements too using dom
+  
+a.style.backgroundColor="red"
+
+a.style.padding="30px"
+-->
+
+
+
+<!-- We can extract as well as manipulate the text  of our selected element
+
+    suppose we have selected paragraph with id para
+    let p=document.getElementById("para")
+
+    p.innerText will be 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, doloremque?' 
+    //since the text inside span is hidden as span has display none so innerText only extracts the thing which is visible in our element
+
+
+    p.textContent will be 'Lorem ipsum dolor sit amet consectetur hello there adipisicing elit. Sunt, doloremque?'
+    //so it extracted all the text content inside our element no matter is is displayed none or not
+
+
+    p.innerHTML  will be  'Lorem ipsum dolor sit amet consectetur <span style="display:none">hello there </span>adipisicing elit. Sunt, doloremque?'
+    //so it went inside p which means in between opening and closing tag whatever there text or html it will bring that all.
+
+    we can change these values as we want.
+
+
+
+-->
+
+<!-- document.getElementsByClassName
+ 
+will give an HTML collection
+-->
+
+
+<!-- querySelector(selector) 
+ will give single element that has this selector and if many has the same selector first one will be returned
+
+ let heading2= document.querySelector(".head2")
+ using querySelector we can use any of selectors we learnt in css to find our element
+
+ let inp=document.querySelector("input[type='email']")
+
+ we can find anything using it
+ 
+-->
+
+<!-- chaining selectors
+
+let ulist=document.querySelector("ul")
+
+let li1=ulist.querySelector("li")
+
+li1.style.backgroundColor="green"
+li1.innerText="Ten"
+ -->
+
+ <!-- querSelectorAll()
+  it is used to select many elements based on a selector it return nodelist which looks like an array but there are differences b/w array and nodelist like in prototype of array we have lots of methods but in prototype of nodelist we have only some methods.
+
+  let list= document.querySelectorAll("li")
+  list.forEach((item)=>{
+  item.style.backgroundColor="cornflowerblue"})
+  
+
+  All though nodelist is not an array but to acess an element we use list[0] so it has some similarities of array
+ -->
+
+
+
+<!-- read about nodelist , array and htmlcollection difference -->
+ <!-- The main difference between a NodeList and an HTMLCollection is that:
+
+NodeList can contain any type of node, including element, text, and comment nodes, while HTMLCollection only contains element nodes.
+NodeList can be either static or live, depending on how it's created (e.g., querySelectorAll() returns a static NodeList, while childNodes is live). In contrast, an HTMLCollection is always live and updates automatically when the DOM changes.
+NodeList can be iterated using forEach(), while HTMLCollection requires a regular loop (for or while) for iteration.
+Neither NodeList nor HTMLCollection have Array methods like map() or filter(), but both can be converted into an Array using Array.from(). -->
+
+<!-- Converting NOdelist to array
+
+let nl= document.querySelectorAll("p")
+
+let nlArr= Array.from(nl)
+
+now it is converted in array so we can use any method of array like filter, map reduce etc in it.
+
+similarly html collections can also be converted in arrays.
+ 
+-->
+
+
+<!-- in nodelist we can use forEach but in HTMLCollection we can't as it is not present in its prototype -->
+
