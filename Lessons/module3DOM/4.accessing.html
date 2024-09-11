@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing elements</title>
+</head>
+<body>
+    <div class="container">
+        <p>Monday</p>
+        <p>Tuesday</p>
+        <p>Wedenesday</p>
+        <p>Thursday</p>
+        <!---->
+    </div>
+
+
+    <script>
+
+let div= document.querySelector(".container")      
+console.log(div);
+let allchild=div.children
+//it gives html collection of all children of div it has only elements init since it is an html collection
+console.log(allchild)
+console.log(allchild[0])
+console.log(allchild[0].innerText)
+
+for(let i=0;i<allchild.length;i++)
+{
+    console.log(allchild[i])
+}
+
+allchild[0].style.color="tomato"
+
+
+console.log(div.childNodes)//it gives nodelist of all the children of div , it includes all the text, comments and elements in it as it is node list.
+
+// Accessing children from parent 
+console.log(div.firstElementChild)//it will give the first child element of div so <p style="color: tomato;">Monday</p> will be there
+console.log(div.lastElementChild)//it will give last child element of div so  <p>Thursday</p> will be there
+
+
+
+let p=document.querySelector("p")//it will select first p so p with text monday is selected
+//accessing parent and sibling from an element
+console.log(p);
+let parentOfP=p.parentElement;
+console.log(parentOfP)
+
+console.log(p.nextElementSibling);
+console.log(p.previousElementSibling)
+
+
+//so if you have any child node access of DOM stored in variable and you want its parent or vice versa then dont use selectors all the time like document.queryselector() and all and just use properties like parentElement , firstChildElement and all. because using selectors is a heavy operation and it may decrease performance.
+
+
+
+
+
+
+  
+    </script>
+</body>
+</html>

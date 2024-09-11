@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating elements</title>
+</head>
+<body style="background-color: #212131; color:white; font-size:0.8rem">
+    
+    <script>
+      let div= document.createElement("div")
+      div.id="container"
+      div.className="mainDiv"
+      div.innerHTML=("<h1>Hello there!</h1>")//this way of writing text do firstly go to the element and bring its textNode which is empty as of now and then it overwrites it so it takes a step more than just creating the textNODe and directly writing it to the element which we did in paragraph element below
+    //   console.log(div);
+      div.style.backgroundColor="green"
+      div.style.padding="10px"
+      div.style.textAlign="center"
+    document.body.appendChild(div)
+    
+    let p=document.createElement("p")
+    p.setAttribute("title","this is a paragraph")
+    const paraText=document.createTextNode("Hello there guys i hope you are well")
+    p.appendChild(paraText)
+
+    div.appendChild(p)
+
+    p.style.backgroundColor="cornflowerblue"
+
+    //both ways of giving text inside an element is fine but in terms of performance creating text node and appending it inside element is more better.
+
+    
+    
+      
+    </script>
+</body>
+</html>

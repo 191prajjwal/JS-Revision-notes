@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating /editing/removing</title>
+</head>
+<body>
+    <ul id="ulist"></ul>
+
+
+    <script>
+//Way-1 
+function createListItem(content){
+
+    let ul= document.getElementById("ulist")
+    let li= document.createElement("li")
+    li.innerText=`${content}`
+    ul.appendChild(li)
+}     
+createListItem("javascript")
+createListItem("python")
+createListItem("ruby")
+createListItem("scala")
+
+
+//way-2
+
+function createListItemOptimizely(content){
+    let ul=document.getElementById("ulist")
+    let li=document.createElement("li")
+    li.appendChild(document.createTextNode(`${content}`))
+    ul.appendChild(li)
+}
+
+createListItemOptimizely("optimized javascript")
+createListItemOptimizely("optimized python")
+createListItemOptimizely("optimized ruby")
+createListItemOptimizely("optimized scala")
+
+//both ways are good but second one optimizes some unneccessary traversing of DOM tree by simply creating a text node and appending it directly to li
+//but for small projects do whatever you want
+
+
+
+/////Editing the elements
+
+//i want to update text scala as rust
+
+let targetToUpdate= document.querySelector("li:nth-child(4)")
+console.log(targetToUpdate);
+// targetToUpdate.innerText="rust" this works fine but not optimizes as we have to traverse Dom tree
+//we can use that but try using optimized one whereever possible
+
+let newli=document.createElement("li")
+newli.textContent="rust"
+targetToUpdate.replaceWith(newli)
+
+//so we update the list by traversing the dom only once for getting targetToUpdate.
+
+
+//editing/updating other way
+
+const target=document.querySelector("li:first-child")
+console.log(target);
+target.outerHTML="<li>Typescript</li>"
+
+///removing elements
+//delete element with text optimized scala
+//
+
+let targetToDelete= document.querySelector("li:last-child")
+targetToDelete.remove()
+
+    </script>
+</body>
+</html>
