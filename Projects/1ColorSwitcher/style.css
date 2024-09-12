@@ -1,0 +1,105 @@
+*{padding:0;
+    margin:0;
+    box-sizing: border-box;}
+    
+    body{
+        background-color: #212131;
+        font-family: sans-serif;
+        
+        
+    }
+    
+    header{
+        background-color: gray;
+        height:50px;
+       display:flex;
+      justify-content: center;
+       align-items: center;
+       
+    }
+    
+    a{
+        text-decoration: none;
+        color:black;
+        background-color: #c8c6c6;
+        padding:5px 10px;
+        width:100px;
+        text-align: center;
+        border:2px solid black;
+        margin:2px;
+        border-radius:4px ;
+        &:hover{
+            background-color: #2a2a2a;
+            color:white
+        }
+    }
+    
+    h1{
+        background-color: rgba(45, 0, 74, 0.696);
+        padding:10px;
+        text-align: center;
+        color:white;
+        margin:10px;
+        border-radius: 5px;
+    }
+    
+    
+    main div{
+        display: flex;
+       justify-content: center;
+       gap:10px;
+       margin:200px 10px 0px 10px
+    }
+    
+    main div button{
+        height:100px;
+        width:100px;
+        border:2px solid rgb(0, 0, 0);
+        cursor: pointer;
+       
+    
+    }
+    
+    
+    #gray{
+        background-color: gray;
+        &:hover{
+            background-color: #707070;
+        }
+    }
+    
+    #white{
+        background-color: #fff;
+        &:hover{
+            background-color: #ededed;
+        }
+    }
+    
+    #blue{
+        background-color: blue;
+        &:hover{
+            background-color: #1a1af7;
+        }
+    }
+    
+    #yellow{
+        background-color: yellow;
+        &:hover{
+            background-color: rgb(224, 224, 8);
+        }
+    }
+    
+    footer{
+        margin:230px 10px 0px 10px;
+        text-align: center;
+        
+    }
+    
+    h2{
+        text-align: center;
+        color: white;
+        background:rgb(57, 57, 57) ;
+        padding:10px;
+        border-radius: 5px;
+    }
+    
