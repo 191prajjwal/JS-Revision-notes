@@ -1,0 +1,22 @@
+body{
+    background-color: #212131;
+    color:white;
+    height:100vh;
+    font-family:  Verdana;
+}
+
+
+#container{
+    margin-top:30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#time{
+    background-color: rgb(189, 98, 0);
+    padding:10px;
+    border-radius: 2px;
+    text-align: center;
+    color:#212131
+}
