@@ -1,0 +1,22 @@
+i wrote about event bubbling and capturing in stack overflow.
+
+link to stack overflow:
+
+https://stackoverflow.com/questions/52163574/how-to-stop-event-capturing-in-javascript/78992657#78992657
+
+
+
+link to perfect documentation: for event bubbling and capturing
+
+https://javascript.info/bubbling-and-capturing
+
+
+
+conclusion:
+Case 1: If you click the parent (not the child), only the parent’s event fires.
+
+Case 2: If you click the child, both the child and parent have event listeners:
+
+Case 2.1: If the parent's listener is set with the third argument as false (or omitted, since it's the default), the child’s event fires first (bubbling), followed by the parent’s event. Using stopPropagation() in the child’s listener stops the event from reaching the parent.
+
+Case 2.2: If the parent's listener is set with the third argument as true, the parent's event fires first (capturing), followed by the child’s event. Using stopPropagation() in the parent’s listener stops the event from reaching the child.

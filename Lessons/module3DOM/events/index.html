@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events
+    </title>
+    <style>
+        body{
+            background-color: #212132;
+            color:white;
+            margin:5%;
+        }
+        #Top1{
+            padding:40px;
+            width:400px;
+            height:400px;
+            border: 2px solid red;
+            
+        }
+        #Top2{
+            padding:40px;
+            width:300px;
+            height:300px;
+            border: 2px solid #7700ff;
+            
+        }
+        #Top3{
+            padding:40px;
+            width:200px;
+            height:200px;
+            border: 2px solid rgb(0, 255, 115);
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="Top1">
+        <p>onclicking here only one popup comes</p>
+        <div id="Top2">
+            <p>onclicking here two popup comes</p>
+            <ul id="Top3">
+                <p>onclicking here three popup comes</p>
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+            </ul>
+        </div>
+    </div>
+    <p>if parents are set to false false then on clicking deeper the bubbling will be deeper</p>
+    <p>if we do true in parent and click deepest child then top1 top3 top2 will come as popup in order this is event capturing and bubbling together. capturing from 1 to 2 them bubbling from 2 to 3
+    </p>
+    <p>we can play by giving true and false to parents</p>
+</body>
+<script>
+document.getElementById("Top1").addEventListener("click",(e)=>{
+    alert("top1 clicked")
+},false)
+document.getElementById("Top2").addEventListener("click",(e)=>{
+    alert("top2 clicked")
+},false)
+document.getElementById("Top3").addEventListener("click",(e)=>{
+    alert("top3 clicked")
+},false)
+
+</script>
+
+</html>
