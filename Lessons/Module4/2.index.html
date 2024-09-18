@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212222; color:white">
+
+    <h1>My name is User</h1>
+
+    <button id="btn">Stop</button>
+    
+</body>
+<script>
+
+    //Task-1 started
+    //change the heading after 3 seconds of page load to My name is Prajjwal
+    //there will be one stop button that if i cliick before 3 seconds then heading change will be discared
+    let h1=document.querySelector("h1")
+   let changer= setTimeout(()=>{
+        h1.innerHTML="My name is Prajjwal"
+    },3000)
+    
+
+    //used set timeout hence after 3 seconds the handler inside it will execute
+
+   document.querySelector("#btn").addEventListener("click",()=>{
+    clearTimeout(changer)
+   },false)
+
+   //if we click it before 3s then the settimeout will be cleared and will not be executed but we have to say which timeout to clear hence give its reference to it by storing the settimeout in a variable and passing it to clear timeout.
+   //the variable usually stores number like which settimeout we are refering to like 1 or 2 or 3.
+
+   //Task-1 completed
+    
+</script>
+</html>

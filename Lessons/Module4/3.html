@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212131; color:white">
+    <h1>Learn Javascript</h1>
+
+    <p id="para"></p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+// const fun=(str)=>{
+
+//     console.log(str+" prajjwal");
+
+// }
+// setInterval(fun,1000,"hi")
+
+//the third argument of setInterval is parameter of callbackfunction it uses.
+
+
+    //task-2
+    //on clicking start button the paragraph text is Time is `local time ` and it changes on each second
+
+//on  clicking stop it stops
+
+let timer;
+document.getElementById("start").addEventListener("click",()=>
+{
+   timer= setInterval(()=>{
+       document.getElementById("para").innerHTML=`The time is ${new Date().toLocaleTimeString()}`
+        
+    },0)
+})
+
+document.getElementById("stop").addEventListener('click',()=>{
+
+    clearInterval(timer)
+})
+
+   
+</script>
+</html>
