@@ -1,0 +1,25 @@
+API is an endpoint that works as an interface b/w two systems like frontend and backend. like one system in java and other system in ruby.
+
+so b/w two systems api is there so that both the systems can communicate consistantly.
+
+
+//one API is github API using which we can get our user info
+//https://api.github.com/users/191prajjwal
+//will give info of user 191prajjwal
+
+
+//JSon formatter is website that can be used to format and see the flow of our API data to understand the API well so that we can use it without confusion
+
+
+///We will use XML HTTP request to get data from API .
+XML http request was old yet powerfull technic 
+
+//https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
+
+//go to mdn and learn about it littlebit.
+
+//XMLHttpRequest has some states like unsent opened headersRecieved LOading Done.
+
+//I have made one table in HTML for telling states in XML Requests
+
+//Despite its name, XMLHttpRequest can be used to retrieve any type of data, not just XML.
