@@ -1,0 +1,74 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <button>Click</button> 
+  <script >
+ class Reactexample{
+    constructor(){
+        this.library="React",
+        this.server="https://localhost:3000/"
+
+        document.querySelector("button").addEventListener('click',this.handleClick)
+    }
+
+    handleClick(){
+        console.log("button clicked")
+        console.log(this.server)
+        console.log(this)
+
+
+    }
+
+    
+ }
+ const app =new Reactexample()
+  </script> 
+</body>
+</html> -->
+
+<!-- the problem there was handleclick will be used at any time as it is envoked on an click event but if we just call handleclick like this handleclick do not have reference to the class hence if we are trying to access this of our reactExample class in it we cant do that so see how using bind makes our thing easy-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <button>Click</button> 
+  <script >
+ class Reactexample{
+    constructor(){
+        this.library="React",
+        this.server="https://localhost:3000/"
+
+        document.querySelector("button").addEventListener('click',this.handleClick.bind(this))
+    }
+
+    handleClick(){
+        console.log("button clicked")
+        console.log(this.server)
+        console.log(this)
+
+    }
+
+    
+ }
+ const app =new Reactexample()
+  </script> 
+</body>
+</html>
+<!-- so bind passes the context to handleclick forever so this inside handleclick refers to this of reactExample hence it can access the properties of it -->
+
+
+<!-- go and see bind in chatgpt and all if not getting -->
+
+<!-- here we are seeing one earlier problem in Our React that was solved using bind -->
