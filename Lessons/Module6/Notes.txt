@@ -1,0 +1,85 @@
+The difference between call() and bind() in JavaScript comes down to when and how the function is invoked.
+
+1. Key Difference in Execution:
+call(): Immediately invokes the function with a specified this context and arguments.
+bind(): Does not immediately invoke the function. Instead, it returns a new function with a permanently bound this context and optional preset arguments.
+2. call() in Detail:
+Purpose: To invoke a function right away, with a specific this value and any number of arguments.
+
+Syntax:
+
+javascript
+Copy code
+func.call(thisArg, arg1, arg2, ...);
+Example:
+
+javascript
+Copy code
+function greet(message) {
+    console.log(`${message}, my name is ${this.name}`);
+}
+
+const person = { name: 'Alice' };
+greet.call(person, 'Hello'); // Outputs: Hello, my name is Alice
+thisArg is person, so this.name refers to 'Alice'.
+The function is executed immediately when call() is used.
+3. bind() in Detail:
+Purpose: To create a new function with a permanently bound this value, which can be called later.
+
+Syntax:
+
+javascript
+Copy code
+const boundFunc = func.bind(thisArg, arg1, arg2, ...);
+Example:
+
+javascript
+Copy code
+function greet(message) {
+    console.log(`${message}, my name is ${this.name}`);
+}
+
+const person = { name: 'Alice' };
+const greetPerson = greet.bind(person); // Returns a new function
+
+greetPerson('Hello'); // Outputs: Hello, my name is Alice
+bind() does not execute the function immediately. It returns a new function where this is permanently set to person.
+4. Side-by-Side Comparison:
+Feature	call()	bind()
+When is the function executed?	Immediately executes the function	Returns a new function, to be called later
+Changes this context?	Yes, sets this to the specified value	Yes, sets this, but for future calls
+Arguments passing	Passed immediately as function arguments	Can be preset during bind(), or passed later
+Use case	Invoke the function right away with a specific this	Create a function to be called later with a specific this
+5. Examples for Clarity:
+call() Example (Immediate Execution):
+javascript
+Copy code
+function introduce(age) {
+    console.log(`Hi, I'm ${this.name} and I'm ${age} years old.`);
+}
+
+const person = { name: 'Bob' };
+
+// Invokes 'introduce' immediately with 'person' as 'this'
+introduce.call(person, 30); // Outputs: Hi, I'm Bob and I'm 30 years old.
+bind() Example (Deferred Execution):
+javascript
+Copy code
+function introduce(age) {
+    console.log(`Hi, I'm ${this.name} and I'm ${age} years old.`);
+}
+
+const person = { name: 'Bob' };
+
+// Returns a new function with 'person' as 'this'
+const introducePerson = introduce.bind(person);
+
+// Later, we can invoke the new function
+introducePerson(30); // Outputs: Hi, I'm Bob and I'm 30 years old.
+6. Summary:
+call(): Immediately calls a function with a specified this context and arguments.
+bind(): Returns a new function with a bound this context and optional preset arguments, which can be called later.
+To remember:
+
+Use call() when you want to execute the function immediately.
+Use bind() when you want to create a new function to execute later with a bound this.
