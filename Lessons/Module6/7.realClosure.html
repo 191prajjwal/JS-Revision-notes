@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure real problem</title>
+</head>
+<body style="background-color: #212131;">
+    <button id="red">Red</button>
+    <button id="pink">pink</button>
+
+    <script>
+        // document.getElementById("red").onclick= function(){
+        //     document.body.style.backgroundColor="red"
+        // }
+
+        // document.getElementById("pink").onclick= function(){
+        //     document.body.style.backgroundColor="pink"
+        // }
+
+        //above was good but not scalable
+
+        // function changeBCG(color){
+        //  document.body.style.backgroundColor=`${color}`
+        // }
+
+        // document.getElementById("red").onclick=changeBCG("red")
+
+        // document.getElementById("pink").onclick=changeBCG("pink")
+
+        // //here we are directly passing function on click  rather than giving it the reference hence it runs automatically without clicking button
+    
+        // //but lets fix it using closure
+
+
+        // function changeBCG(color){
+
+        //    return  function(){document.body.style.backgroundColor=`${color}`}
+         
+        // }
+        function changeBCG(color){return ()=>document.body.style.backgroundColor=`${color}`}
+
+        document.getElementById("red").onclick=changeBCG("red")
+
+        document.getElementById("pink").onclick=changeBCG("pink")
+
+        //this worked because inner function that is returned on calling changeBCG remembers its lexical scope too hence it remembers what color is passed
+
+        
+
+    </script>
+</body>
+</html>
